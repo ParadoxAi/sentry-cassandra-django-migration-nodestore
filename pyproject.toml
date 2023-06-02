@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+
+[project]
+name = "sentry-cassandra-django-migration-nodestore"
+version = "1.0.0"
+authors = [
+    {name = "Robert Coleman", email = "pypi@robert.net.nz"}
+]
+description = "A Sentry extension to migrate NodeStore from Django to Cassandra"
+readme = "README.md"
+classifiers = [
+    "Framework :: Django",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent"
+]
+requires-python = ">=3.8"
+
+dependencies = [
+    "sentry-cassandra-nodestore >= 1.2.0",
+]
+
+[project.urls]
+Source = "https://github.com/rjocoleman/sentry-cassandra-django-migration-nodestore"
