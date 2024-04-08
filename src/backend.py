@@ -2,10 +2,7 @@
 from sentry.nodestore.base import NodeStorage
 from sentry.nodestore.django.backend import DjangoNodeStorage
 
-# working around dashes in the package name
-import importlib
-sentry_cassandra_nodestore_backend = importlib.import_module('sentry-cassandra-nodestore.backend')
-CassandraNodeStorage = getattr(sentry_cassandra_nodestore_backend, 'CassandraNodeStorage')
+from .cassandra_backend import CassandraNodeStorage
 
 class CassandraDjangoMigrationNodeStorage(NodeStorage):
     def __init__(self, servers, keyspace='sentry', columnfamily='nodestore', **kwargs):

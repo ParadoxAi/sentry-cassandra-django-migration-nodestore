@@ -20,7 +20,7 @@ classifiers = [
 requires-python = ">=3.8"
 
 dependencies = [
-    "sentry-cassandra-nodestore >= 1.2.0",
+    "cassandra-driver >= 3"
 ]
 
 [project.urls]
