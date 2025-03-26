@@ -12,6 +12,7 @@ import sys
 
 from os import environ
 
+from cassandra.io.libevreactor import LibevConnection
 from cassandra.cluster import Cluster, Session
 from cassandra.protocol import SyntaxException
 
@@ -55,6 +56,7 @@ class Client(object):
             hosts.add(host)
 
         self._cluster = Cluster(hosts, port=int(port), **kwargs)
+        self._cluster.connection_class = LibevConnection
         self._cluster.protocol_version = 4
         self._session = self._cluster.connect()
 
